@@ -22,7 +22,6 @@ word_array = ["Auslöschen",
 "Ahnung",
 "Hitzkopf",
 "AnFührer" ]
-
 def trans(word):
     build_url = "https://linguee-api-v2.herokuapp.com/api/v2/translations?query=" + word + "&src=de&dst=en&guess_direction=true&follow_corrections=always"
     requestget = requests.get(build_url, headers=headers)
@@ -38,16 +37,18 @@ def trans(word):
     #Translation
     translation_array = (y[0]["translations"])
     
-    print("Position: " + position + "\n" + "Original Text: " + original_text + "\n" + "Translation: ")
+    print("Position: " + position + "\n" + "Original Text: " + original_text + "\n")
     for translation in translation_array:
         if translation["featured"] == True:
-            print(translation["text"])
+            print( "Translation: " + translation["text"].replace("\"", "\'"))
             print("Examples: ")
-            print(translation["examples"])
-    
-    print("\n")
+            for example in translation["examples"]:
+                print("DE: " + example["src"].replace("\"", "\'"))
+                print("EN: " + example["dst"].replace("\"", "\'"))
 
+    
 
 for word in word_array:
-    print("Word: " + word)
+    print(word +";\"")
     trans(word=word)
+    print("\"")
