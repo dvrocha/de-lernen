@@ -6,25 +6,7 @@ headers = {
         'content-type': 'application/json',
     }
 
-word_array = ["Auslöschen",
-"aufzureißen",
-"darf",
-"feine",
-"durchhalten",
-"irgendwelche",
-"Beschwerden",
-"Ding",
-"davon",
-"lebendige",
-"scheinst",
-"Finte",
-"durchschaut",
-"Einzelheiten",
-"Ahnung",
-"Hitzkopf",
-"AnFührer" ]
-
-word_array2 = ["Ruhrgebiet",
+word_array = ["Ruhrgebiet",
 "Beschäftigten",
 "Ländern",
 "wissenschaftlichen",
@@ -52,8 +34,15 @@ def trans(word):
     #print(requestget.json())
     y = requestget.json()
 
-
+    
     #print(json.dumps(y, indent=2))
+    #print(y)
+    if not y:
+        return
+    if 'message' in y:
+        return
+
+    print(word +";\"")
     #Pos
     position = (y[0]["pos"])
     #Text Original
@@ -69,11 +58,11 @@ def trans(word):
             for example in translation["examples"]:
                 print("DE: " + example["src"].replace("\"", "\'"))
                 print("EN: " + example["dst"].replace("\"", "\'"))
+    print("\"")
 
     
 
 for word in word_array:
-    print(word +";\"")
     trans(word=word)
-    time.sleep(5)
-    print("\"")
+    time.sleep(1)
+    
