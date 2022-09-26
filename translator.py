@@ -40,9 +40,10 @@ def trans(word):
     
     print("Position: " + position + "\n" + "Original Text: " + original_text + "\n" + "Translation: ")
     for translation in translation_array:
-        print(translation["text"])
-        print("Examples: ")
-        print(translation["examples"])
+        if translation["featured"] == True:
+            print(translation["text"])
+            print("Examples: ")
+            print(translation["examples"])
     
     print("\n")
 
