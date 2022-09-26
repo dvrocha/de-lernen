@@ -1,5 +1,6 @@
 import requests
 import sys
+import time
 
 headers = {
         'content-type': 'application/json',
@@ -53,4 +54,5 @@ def trans(word):
 for word in word_array:
     print(word +";\"")
     trans(word=word)
+    time.sleep(5
     print("\"")
