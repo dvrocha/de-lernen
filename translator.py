@@ -54,5 +54,5 @@ def trans(word):
 for word in word_array:
     print(word +";\"")
     trans(word=word)
-    time.sleep(5
+    time.sleep(5)
     print("\"")
