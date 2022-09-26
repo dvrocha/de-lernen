@@ -24,6 +24,27 @@ word_array = ["Auslöschen",
 "Hitzkopf",
 "AnFührer" ]
 
+word_array2 = ["Ruhrgebiet",
+"Beschäftigten",
+"Ländern",
+"wissenschaftlichen",
+"vereint",
+"Fakultäten",
+"Spektrum",
+"europäischen",
+"Studiengänge",
+"angeboten",
+"Untereinander",
+"Fakultät",
+"fachübergreifende",
+"schärfen",
+"bewährtes",
+"Förderung",
+"Nachwuchs",
+"hervorrangende",
+"Ruhr"]
+
+
 
 def trans(word):
     build_url = "https://linguee-api-v2.herokuapp.com/api/v2/translations?query=" + word + "&src=de&dst=en&guess_direction=true&follow_corrections=always"
