@@ -22,6 +22,8 @@ word_array = ["Auslöschen",
 "Ahnung",
 "Hitzkopf",
 "AnFührer" ]
+
+
 def trans(word):
     build_url = "https://linguee-api-v2.herokuapp.com/api/v2/translations?query=" + word + "&src=de&dst=en&guess_direction=true&follow_corrections=always"
     requestget = requests.get(build_url, headers=headers)
