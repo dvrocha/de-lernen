@@ -1,6 +1,7 @@
 import requests
 import codecs
 from bs4 import BeautifulSoup
+import time
 
 
 
@@ -8,10 +9,18 @@ word_array = [
 "Hochzeit",
 "weinen",
 "Verlobter",
+"worüber",
+"aufgeregt",
+"furchtbar",
+"uberhaupt",
+"ständig",
+"niesen",
+"während",
 ]
 
 output_text = ""
 for word in word_array:
+    time.sleep(3)
     url_base = "https://www.linguee.com/english-german/search?source=german?destination=english?&query=" + word
     page = requests.get(url_base)
     soup = BeautifulSoup(page.text, "html.parser")
