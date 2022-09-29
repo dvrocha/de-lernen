@@ -12,7 +12,7 @@ word_array = [
 "worüber",
 "aufgeregt",
 "furchtbar",
-"uberhaupt",
+"überhaupt",
 "ständig",
 "niesen",
 "während",
@@ -24,7 +24,7 @@ for word in word_array:
     url_base = "https://www.linguee.com/english-german/search?source=german?destination=english?&query=" + word
     page = requests.get(url_base)
     soup = BeautifulSoup(page.text, "html.parser")
-
+    print(word)
     results = soup.find(id="dictionary")
 
     translations = results.find_all("div", class_="lemma featured")
@@ -44,6 +44,9 @@ for word in word_array:
                     output_text += "\n<br><br>"
                 else:
                     output_text += "\n<br>-"
+        else:
+            output_text += "\n<br><br>"
+        
     output_text += "\"\n"
             
 
