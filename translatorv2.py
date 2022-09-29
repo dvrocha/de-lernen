@@ -3,7 +3,7 @@ import codecs
 from bs4 import BeautifulSoup
 import time
 
-
+#pip install beautifulsoup4 requests codecs
 
 word_array = [
 "Hochzeit",
